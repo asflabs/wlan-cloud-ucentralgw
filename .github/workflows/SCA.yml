@@ -27,10 +27,8 @@ jobs:
       
       - name: cppcheck
         run: |
-          pwd
-          echo ${{ github.workspace }}
-          ll ${{ github.workspace }}
-          ll .
-#          mkdir cmake-build
-#          cd cmake-build
-#          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On ${{ github.workspace }}
+          mkdir cmake-build
+          pushd cmake-build
+          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On ${{ github.workspace }} ..
+          infer run -o infer_results --compilation-database compile_commands.json
+          
