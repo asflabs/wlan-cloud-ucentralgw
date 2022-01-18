@@ -28,15 +28,15 @@ jobs:
       - name: config cmake
         run: |
           mkdir cmake-build
-          pushd cmake-build
+          cd cmake-build
           cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On ..
           
       - name: infer
         run: |
-          infer run -o infer_results --compilation-database compile_commands.json
+          infer run -o infer_results --compilation-database cmake-build/compile_commands.json
           
       - name: pvs-studio
         run: |
-          pvs-studio-analyzer analyze -f compile_commands.json -o pvs.log -j8
+          pvs-studio-analyzer analyze -f cmake-build/compile_commands.json -o pvs.log -j8
           plog-converter -a GA:1,2 -t tasklist -o project.tasks pvs.log
           
