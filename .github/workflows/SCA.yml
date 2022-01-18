@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  infer:
     # The type of runner that the job will run on
     runs-on: nassi
 
@@ -26,4 +26,11 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: cppcheck
-        uses: deep5050/cppcheck-action@v3.0
+        run: |
+          pwd
+          echo ${{ github.workspace }}
+          ll ${{ github.workspace }}
+          ll .
+#          mkdir cmake-build
+#          cd cmake-build
+#          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On ${{ github.workspace }}
