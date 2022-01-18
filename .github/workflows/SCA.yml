@@ -29,6 +29,7 @@ jobs:
         run: |
           mkdir cmake-build
           pushd cmake-build
+          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On ..
           
       - name: infer
         run: |
