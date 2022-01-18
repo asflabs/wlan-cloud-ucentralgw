@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 //
 // Created by stephane bourque on 2021-11-23.
 //
@@ -215,3 +217,4 @@ namespace OpenWifi {
 } // namespace OpenWifi
 
 #endif // UCENTRALGW_RTTYS_SERVER_H
+

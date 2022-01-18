@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 //
 // Created by stephane bourque on 2021-09-12.
 //
@@ -61,4 +63,5 @@ namespace OpenWifi::RESTAPI::Errors {
     static const std::string ExpiredToken{"Token has expired, user must login."};
     static const std::string SubscriberMustExist{"Subscriber must exist."};
 }
+
 

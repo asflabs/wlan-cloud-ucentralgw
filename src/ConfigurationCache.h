@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 //
 // Created by stephane bourque on 2021-09-21.
 //
@@ -38,3 +40,4 @@ namespace OpenWifi {
 	inline uint64_t GetCurrentConfigurationID(const std::string &S) { return ConfigurationCache::instance().CurrentConfig(S); }
 	inline void SetCurrentConfigurationID(const std::string &S, uint64_t ID) { ConfigurationCache::instance().Add(S,ID); }
 }
+

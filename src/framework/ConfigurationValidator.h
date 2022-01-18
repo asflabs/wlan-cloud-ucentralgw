@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 //
 // Created by stephane bourque on 2021-09-14.
 //
@@ -41,4 +43,5 @@ namespace OpenWifi {
     inline ConfigurationValidator * ConfigurationValidator() { return ConfigurationValidator::instance(); }
     inline bool ValidateUCentralConfiguration(const std::string &C, std::string &Error) { return ConfigurationValidator::instance()->Validate(C, Error); }
 }
+
 

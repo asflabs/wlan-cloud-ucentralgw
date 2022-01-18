@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 //
 // Created by stephane bourque on 2021-07-12.
 //
@@ -131,3 +133,4 @@ namespace OpenWifi::FMSObjects {
 
 
 #endif //UCENTRALFMS_RESTAPI_FMSOBJECTS_H
+

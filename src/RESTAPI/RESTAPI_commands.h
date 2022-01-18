@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 //
 //	License type: BSD 3-Clause License
 //	License copy: https://github.com/Telecominfraproject/wlan-cloud-ucentralgw/blob/master/LICENSE
@@ -28,3 +30,4 @@ namespace OpenWifi {
 		void DoPut() final {};
 	};
 }
+
