@@ -25,10 +25,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: cppcheck
+      - name: config cmake
         run: |
           mkdir cmake-build
           pushd cmake-build
-          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On ${{ github.workspace }} ..
+          
+      - name: infer
+        run: |
           infer run -o infer_results --compilation-database compile_commands.json
+          
+      - name: pvs-studio
+        run: |
+          pvs-studio-analyzer analyze -f compile_commands.json -o pvs.log -j8
           
