@@ -24,19 +24,28 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+
+      - name: create report dir
+        run: |
+          mkdir ${{ github.workspace }}/report_dir
       
-      - name: config cmake
-        run: |
-          mkdir cmake-build
-          cd cmake-build
-          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On ..
-          
-      - name: infer
-        run: |
-          infer run -o infer_results --compilation-database cmake-build/compile_commands.json
-          
-      - name: pvs-studio
-        run: |
-          pvs-studio-analyzer analyze -f cmake-build/compile_commands.json -o pvs.log -j8
-          plog-converter -a GA:1,2 -t tasklist -o project.tasks pvs.log
+      - name: create PVS report
+        uses: .github\actions\run-pvs-studio.yml
+        with:
+          report-dir: '${{ github.workspace }}/report_dir'
+      
+#      - name: config cmake
+#        run: |
+#          mkdir cmake-build
+#          cd cmake-build
+#          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On ..
+#          
+#      - name: infer
+#        run: |
+#          infer run -o infer_results --compilation-database cmake-build/compile_commands.json
+#          
+#      - name: pvs-studio
+#        run: |
+#          pvs-studio-analyzer analyze -f cmake-build/compile_commands.json -o pvs.log -j8
+#          plog-converter -a GA:1,2 -t tasklist -o project.tasks pvs.log
           
