@@ -2,22 +2,11 @@ name: 'run-pvs-studio'
 description: 'execute pvs-studio in BuildReady container'
 runs:
   using: 'docker'
-  image: '.github/actions/BuildReady'
-  volumes: 
-    - ${{ inputs.report-dir }}:/report_dir
+  image: '.github\actions\run-pvs-studio\Dockerfile'
   inputs:
-    report-dir:
+    output-report-path:
       descritpion: 'Location to drop the report'
       required: true
-  run: |
-    cd /root
-    wget https://cdn.pvs-studio.com/pvs-studio-7.16.55312.179-x86_64.tgz
-    tar -xf pvs-studio-7.16.55312.179-x86_64.tgz
-    ./pvs-studio-7.16.55312.179-x86_64/install.sh
-    pvs-studio-analyzer credentials PVS-Studio Free FREE-FREE-FREE-FREE
-    cd /owgw
-    mkdir cmake-build
-    cd cmake-build
-    cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On ..
-    pvs-studio-analyzer analyze -f cmake-build/compile_commands.json -o pvs.log -j8
-    plog-converter -a GA:1,2 -t tasklist -o /report_dir/pvs-report.txt pvs.log
+      default: 'pvs-report.txt'
+  args:
+    - ${{ inputs.output-report-path }}
