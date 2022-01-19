@@ -30,7 +30,7 @@ jobs:
           mkdir ${{ github.workspace }}/report_dir
       
       - name: create PVS report
-        uses: asflabs/wlan-cloud-ucentralgw@SCACI/.github/actions/run-pvs-studio.yml
+        uses: asflabs/wlan-cloud-ucentralgw/.github/actions/run-pvs-studio.yml@v2
         with:
           report-dir: '${{ github.workspace }}/report_dir'
       
