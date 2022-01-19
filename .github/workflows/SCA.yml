@@ -28,4 +28,4 @@ jobs:
       - name: create PVS report
         uses: ./.github/actions/run-pvs-studio
         with:
-          output-report-path: 'pvs_reporttt.txt'
+          output-report-path: 'pvs_report.txt'

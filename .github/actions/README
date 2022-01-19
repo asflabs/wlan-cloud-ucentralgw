@@ -1,0 +1,7 @@
+**run-pvs-action**
+
+This action runs the PVS-Studio static code analyzer on the workspace repo, It expects it to have a CMake file on the repo's root
+
+***dependencies***
+
+The runner is expected to have the `ucloud-builder` docker image, it can be built from the `BuildReadyDockerFile` file
