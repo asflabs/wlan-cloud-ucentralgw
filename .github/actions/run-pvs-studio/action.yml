@@ -7,6 +7,6 @@ inputs:
     default: 'pvs-report.txt'
 runs:
   using: 'docker'
-  image: '.github\actions\run-pvs-studio\Dockerfile'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.output-report-path }}
