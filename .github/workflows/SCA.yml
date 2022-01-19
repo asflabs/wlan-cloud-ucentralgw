@@ -30,6 +30,11 @@ jobs:
         with:
           output-report-path: 'pvs_reporttt.txt'
       
+      -name: argh
+        run: |
+          pwd
+          find . | grep pvs
+      
 #      - name: config cmake
 #        run: |
 #          mkdir cmake-build
