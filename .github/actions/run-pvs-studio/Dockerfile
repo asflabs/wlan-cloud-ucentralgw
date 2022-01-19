@@ -2,6 +2,7 @@ FROM ucloud-builder AS pvs-studio
 WORKDIR /pvs-studio
 
 ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 WORKDIR /pvs_workdir
 RUN wget https://cdn.pvs-studio.com/pvs-studio-7.16.55312.179-x86_64.tgz
