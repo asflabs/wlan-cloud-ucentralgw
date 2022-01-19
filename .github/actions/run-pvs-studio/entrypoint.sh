@@ -1,3 +1,4 @@
+#!/bin/bash
 mkdir -p /pvs_workdir/cmake-build
 pushd /pvs_workdir/cmake-build
 cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On /github/workspace
