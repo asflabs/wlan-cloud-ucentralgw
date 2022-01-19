@@ -30,7 +30,7 @@ jobs:
         with:
           output-report-path: 'pvs_reporttt.txt'
       
-      -name: argh
+      - name: argh
         run: |
           pwd
           find . | grep pvs
