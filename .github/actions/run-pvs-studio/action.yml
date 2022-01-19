@@ -1,12 +1,12 @@
 name: 'run-pvs-studio'
 description: 'execute pvs-studio in BuildReady container'
+inputs:
+  output-report-path:
+    descritpion: 'Location to drop the report'
+    required: true
+    default: 'pvs-report.txt'
 runs:
   using: 'docker'
   image: '.github\actions\run-pvs-studio\Dockerfile'
-  inputs:
-    output-report-path:
-      descritpion: 'Location to drop the report'
-      required: true
-      default: 'pvs-report.txt'
   args:
     - ${{ inputs.output-report-path }}
